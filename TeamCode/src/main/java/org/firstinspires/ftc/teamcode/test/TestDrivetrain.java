@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 import org.firstinspires.ftc.teamcode.hardware.Drivetrain;
 
-@Autonomous (name = "Drivetrain Test", group = "Test")
+@Autonomous (name = "Drivetrain Test", group = "PRTest")
 public class TestDrivetrain extends LinearOpMode {
 
     Drivetrain move;
