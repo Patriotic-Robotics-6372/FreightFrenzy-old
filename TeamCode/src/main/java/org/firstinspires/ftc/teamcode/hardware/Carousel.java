@@ -8,6 +8,7 @@ Date: 10.12.21
 System: Carousel
  */
 
+//Essentially an exact replica of the lift system with different variable and method names
 
 public class Carousel {
 
@@ -16,6 +17,8 @@ public class Carousel {
    public Carousel(DcMotor c) {
         this.carousel = c;
    }
+
+   //Different spins depending on what side of the field we are on
 
    public void rightSpin(double rotation) {
        spin(rotation);

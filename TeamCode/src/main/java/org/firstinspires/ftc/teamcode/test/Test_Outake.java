@@ -15,10 +15,10 @@ public class Test_Outake  extends LinearOpMode {
         waitForStart();
 
         outake.moveForward( 0.5);
-        sleep( 5000)
+        sleep( 5000);
         outake.moveBack( 0.5 );
         sleep(5000);
         outake.stop();
-        sleep(5000)
+        sleep(5000);
     }
 }

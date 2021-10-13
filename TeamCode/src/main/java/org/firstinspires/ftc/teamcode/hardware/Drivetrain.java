@@ -42,6 +42,8 @@ public class Drivetrain {
         move(0, 0, 0, 0);
     }
 
+//Will eventually add code for exact movements? Still need to add encoders :p
+
 
     public void move (double fL, double fR, double bL, double bR) {
         frontLeft.setPower(fL);
