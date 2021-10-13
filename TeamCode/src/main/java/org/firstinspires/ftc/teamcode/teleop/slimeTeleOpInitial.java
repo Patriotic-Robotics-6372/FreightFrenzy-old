@@ -9,7 +9,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 public class slimeTeleOpInitial extends OpMode {
 
     //Drivetrain
-    DcMotor frontleft, frontRight, backLeft, backRight;
+    DcMotor frontLeft, frontRight, backLeft, backRight;
     //Intake
     DcMotor intake;
     //Outtake
@@ -23,13 +23,13 @@ public class slimeTeleOpInitial extends OpMode {
     public void init() {
 
         //DT
-        hardwareMap.dcMotor.get("frontLeft");
-        hardwareMap.dcMotor.get("frontRight");
-        hardwareMap.dcMotor.get("backLeft");
-        hardwareMap.dcMotor.get("backRight");
+        frontLeft = hardwareMap.dcMotor.get("frontLeft");
+        frontRight = hardwareMap.dcMotor.get("frontRight");
+        backLeft = hardwareMap.dcMotor.get("backLeft");
+        backRight = hardwareMap.dcMotor.get("backRight");
 
         //Intake
-        hardwareMap.crservo.get("intake");
+        intake = hardwareMap.dcMotor.get("intake");
         //Outtake
 
         //Lift
@@ -44,12 +44,12 @@ public class slimeTeleOpInitial extends OpMode {
     //Debating on whether or not I want to drive this the same as the dummy bot ;-;
     public void loop() {
 
-        //Movement (Forwards anyway its just a test this code is annoyinggggggg
+        //Movement (Forwards anyway its just a test this code is annoyinggggggg)
         if (Math.abs(gamepad1.left_stick_y) > 0.1) {
-                frontleft.setPower(gamepad1.left_stick_y);
+                frontLeft.setPower(gamepad1.left_stick_y);
                 backLeft.setPower(gamepad1.left_stick_y);
         } else {
-            frontleft.setPower(0);
+            frontLeft.setPower(0);
             backLeft.setPower(0);
         }
 
@@ -63,7 +63,7 @@ public class slimeTeleOpInitial extends OpMode {
 
         //Intake
 
-        if (gamepad1.left_trigger) {
+        if (gamepad1.left_trigger > 0.1) {
             intake.setPower(.1);
         } else {
             intake.setPower(0);

@@ -4,21 +4,21 @@ package org.firstinspires.ftc.teamcode.test;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
-import org.firstinspires.ftc.teamcode.hardware.Outake;
+import org.firstinspires.ftc.teamcode.hardware.Outtake;
 
-@Autonomous (name= "Outake test")
-public class Test_Outake  extends LinearOpMode {
-    Outake outake;
+@Autonomous (name= "Outtake test")
+public class TestOuttake  extends LinearOpMode {
+    Outtake outtake;
     @Override
     public void runOpMode () throws InterruptedException {
-        outake = new Outake(hardwareMap.crservo.get("outake"));
+        outtake = new Outtake(hardwareMap.crservo.get("outtake"));
         waitForStart();
 
-        outake.moveForward( 0.5);
+        outtake.moveForward( 0.5);
         sleep( 5000);
-        outake.moveBack( 0.5 );
+        outtake.moveBack( 0.5 );
         sleep(5000);
-        outake.stop();
+        outtake.stop();
         sleep(5000);
     }
 }

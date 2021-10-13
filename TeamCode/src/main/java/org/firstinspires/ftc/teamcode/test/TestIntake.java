@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import org.firstinspires.ftc.teamcode.hardware.Intake;
 
 @Autonomous (name = "Intake Test")
-public class Test_intake extends LinearOpMode {
+public class TestIntake extends LinearOpMode {
     Intake intake;
     @Override
     public void runOpMode() throws InterruptedException {
