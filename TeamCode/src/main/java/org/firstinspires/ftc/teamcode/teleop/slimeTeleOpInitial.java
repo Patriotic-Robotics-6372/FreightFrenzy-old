@@ -10,13 +10,17 @@ public class slimeTeleOpInitial extends OpMode {
 
     //Drivetrain
     DcMotor frontLeft, frontRight, backLeft, backRight;
+
     //Intake
     //DcMotor intake;
+
     //Outtake
     //CRServo outtake;
+
     //Lift
     //DcMotor lift;
-    //Carousel
+
+   //Carousel
    //DcMotor carousel;
 
     @Override
@@ -30,7 +34,8 @@ public class slimeTeleOpInitial extends OpMode {
 
         //Intake
         //intake = hardwareMap.dcMotor.get("intake");
-        //Outtake
+
+        //Outtake (AGAIN, THIS IS A SERVO)
 
         //Lift
 
