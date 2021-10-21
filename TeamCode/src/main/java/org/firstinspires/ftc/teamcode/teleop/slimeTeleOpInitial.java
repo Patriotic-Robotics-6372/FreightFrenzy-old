@@ -12,7 +12,7 @@ public class slimeTeleOpInitial extends OpMode {
     DcMotor frontLeft, frontRight, backLeft, backRight;
 
     //Intake
-    //DcMotor intake;
+ //   DcMotor intake;
 
     //Outtake
     //CRServo outtake;
@@ -33,7 +33,7 @@ public class slimeTeleOpInitial extends OpMode {
         backRight = hardwareMap.dcMotor.get("backRight");
 
         //Intake
-        //intake = hardwareMap.dcMotor.get("intake");
+//        intake = hardwareMap.dcMotor.get("intake");
 
         //Outtake (AGAIN, THIS IS A SERVO)
 
@@ -45,11 +45,11 @@ public class slimeTeleOpInitial extends OpMode {
     }
 
     @Override
-
-    //Debating on whether or not I want to drive this the same as the dummy bot ;-;
     public void loop() {
 
-        //Movement (Forwards anyway its just a test this code is annoyinggggggg)
+//        Movement
+//
+
         if (Math.abs(gamepad1.left_stick_y) > 0.1) {
                 frontLeft.setPower(gamepad1.left_stick_y);
                 backLeft.setPower(gamepad1.left_stick_y);
@@ -66,7 +66,12 @@ public class slimeTeleOpInitial extends OpMode {
             backRight.setPower(0);
         }
 
-        //Intake
+//        (Left + Right)
+
+
+        }
+
+//        Intake
 
 //        if (gamepad1.left_trigger > 0.1) {
 //            intake.setPower(.1);
