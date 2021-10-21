@@ -18,10 +18,10 @@ public class NaZyiaTeleOp {
 
         //outake
         CRServo outake;
-        Servo
+        //Servo
 
         //lift
-        DcMotor lift;
+        public DcMotor lift;
 
         @Override
         public void init() {
@@ -71,10 +71,12 @@ public class NaZyiaTeleOp {
             }
             //outake
             //positioner
+            /*
             if (gamepad1.b) {
-                .setPosition(1);
+                setPosition(1);
 
             }
+             */
         }
     }
 }

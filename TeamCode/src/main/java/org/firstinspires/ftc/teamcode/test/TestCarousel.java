@@ -13,7 +13,7 @@ public class TestCarousel extends LinearOpMode {
 
     @Override
     public void runOpMode() throws InterruptedException {
-            spin = new Carousel(hardwareMap.dcMotor.get("carousel"));
+            spin = new Carousel(hardwareMap.dcMotor.get("Leftcarousel"),hardwareMap.dcMotor.get("Rightcarousel"));
 
             waitForStart();
 

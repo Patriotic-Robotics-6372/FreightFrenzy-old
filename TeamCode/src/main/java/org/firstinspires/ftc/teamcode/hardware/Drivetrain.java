@@ -11,7 +11,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 public class Drivetrain {
 
     private DcMotor frontLeft, frontRight, backLeft, backRight;
-
+    //cableTies
 
     public Drivetrain (DcMotor fL, DcMotor fR, DcMotor bL, DcMotor bR) {
 

@@ -11,13 +11,13 @@ public class slimeTeleOpInitial extends OpMode {
     //Drivetrain
     DcMotor frontLeft, frontRight, backLeft, backRight;
     //Intake
-    DcMotor intake;
+    //DcMotor intake;
     //Outtake
-    CRServo outtake;
+    //CRServo outtake;
     //Lift
-    DcMotor lift;
+    //DcMotor lift;
     //Carousel
-   DcMotor carousel;
+   //DcMotor carousel;
 
     @Override
     public void init() {
@@ -29,7 +29,7 @@ public class slimeTeleOpInitial extends OpMode {
         backRight = hardwareMap.dcMotor.get("backRight");
 
         //Intake
-        intake = hardwareMap.dcMotor.get("intake");
+        //intake = hardwareMap.dcMotor.get("intake");
         //Outtake
 
         //Lift
@@ -63,11 +63,11 @@ public class slimeTeleOpInitial extends OpMode {
 
         //Intake
 
-        if (gamepad1.left_trigger > 0.1) {
-            intake.setPower(.1);
-        } else {
-            intake.setPower(0);
-        }
+//        if (gamepad1.left_trigger > 0.1) {
+//            intake.setPower(.1);
+//        } else {
+//            intake.setPower(0);
+//        }
 
 
     }

@@ -2,6 +2,12 @@ package org.firstinspires.ftc.teamcode.hardware;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
 
+/**
+ * Date: 10/20/21
+ * Author: Na Zyia Nelson
+ * Subsystem : intake
+ */
+
 public class  Intake {
 
     private DcMotor intake;
