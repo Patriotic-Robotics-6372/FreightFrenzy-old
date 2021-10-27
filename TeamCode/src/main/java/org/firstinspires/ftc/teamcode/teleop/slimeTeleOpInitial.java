@@ -75,9 +75,13 @@ public class slimeTeleOpInitial extends OpMode {
             intake.setPower(0);
         }
 
-//        Outtake
+//        Carousel
 
-        if (gamepad1.right_bumper)
+        if (gamepad1.right_bumper) {
+            carouselRight.setPower(0.2);
+        }   else {
+            carouselRight.setPower(0);
+        }
 
     }
 
