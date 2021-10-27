@@ -2,7 +2,7 @@ package org.firstinspires.ftc.teamcode.hardware;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
 
-/*
+/**
 Author: Slimeafro
 Date: 10.7.21
 System: Lift

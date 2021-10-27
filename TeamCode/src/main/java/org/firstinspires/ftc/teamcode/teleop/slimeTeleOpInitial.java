@@ -12,16 +12,16 @@ public class slimeTeleOpInitial extends OpMode {
     DcMotor frontLeft, frontRight, backLeft, backRight;
 
     //Intake
- //   DcMotor intake;
+    DcMotor intake;
 
     //Outtake
-    //CRServo outtake;
+    CRServo outtake;
 
     //Lift
-    //DcMotor lift;
+    DcMotor lift;
 
    //Carousel
-   //DcMotor carousel;
+    DcMotor carouselLeft, carouselRight;
 
     @Override
     public void init() {
@@ -33,14 +33,15 @@ public class slimeTeleOpInitial extends OpMode {
         backRight = hardwareMap.dcMotor.get("backRight");
 
         //Intake
-//        intake = hardwareMap.dcMotor.get("intake");
+        intake = hardwareMap.dcMotor.get("intake");
 
-        //Outtake (AGAIN, THIS IS A SERVO)
-
+        //Outtake
+        outtake = hardwareMap.crservo.get("outtake");
         //Lift
-
+        lift = hardwareMap.dcMotor.get("lift");
         //Carousel
-
+        carouselLeft = hardwareMap.dcMotor.get("leftCarousel");
+        carouselRight = hardwareMap.dcMotor.get("rightCoursel");
 
     }
 
@@ -51,8 +52,8 @@ public class slimeTeleOpInitial extends OpMode {
 //
 
         if (Math.abs(gamepad1.left_stick_y) > 0.1) {
-                frontLeft.setPower(gamepad1.left_stick_y);
-                backLeft.setPower(gamepad1.left_stick_y);
+                frontLeft.setPower(gamepad1.left_stick_y * 0.2);
+                backLeft.setPower(gamepad1.left_stick_y * 0.2);
         } else {
             frontLeft.setPower(0);
             backLeft.setPower(0);
@@ -66,19 +67,22 @@ public class slimeTeleOpInitial extends OpMode {
             backRight.setPower(0);
         }
 
-//        (Left + Right)
-
-
-        }
-
 //        Intake
 
-//        if (gamepad1.left_trigger > 0.1) {
-//            intake.setPower(.1);
-//        } else {
-//            intake.setPower(0);
-//        }
+        if (gamepad1.left_trigger > 0.1) {
+            intake.setPower(0.2);
+        } else {
+            intake.setPower(0);
+        }
+
+//        Outtake
+
+        if (gamepad1.right_bumper)
+
+    }
+
+
 
 
     }
-}
+
