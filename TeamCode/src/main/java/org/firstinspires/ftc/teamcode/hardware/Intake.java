@@ -25,7 +25,7 @@ public class  Intake {
         intake. setPower(-power);
     }
     //stop
-    public void stop() {
+    public void stopIT() {
         intake. setPower(0);
     }
 

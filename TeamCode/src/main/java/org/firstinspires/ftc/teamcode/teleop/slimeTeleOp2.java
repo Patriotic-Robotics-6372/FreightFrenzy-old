@@ -24,32 +24,37 @@ public class slimeTeleOp2 extends LinearOpMode {
 
 
                 if (Math.abs(gamepad1.left_stick_y) > 0.1) {
-
+                    zoom.drivetrain.forward(.2);
                 } else {
-
+                    zoom.drivetrain.stopMotors();
                 }
 
                 if (Math.abs(gamepad1.right_stick_y) > 0.1) {
-
+                    zoom.drivetrain.forward(.2);
                 } else {
-
+                    zoom.drivetrain.stopMotors();
                 }
 
 //        Intake
 
                 if (gamepad1.left_trigger > 0.1) {
-
+                    zoom.intake.spinForward(.2);
                 } else {
-
+                    zoom.intake.stopIT();
                 }
 
 //        Carousel
 
                 if (gamepad1.right_bumper) {
-
+                zoom.carousel.rightSpin(.1);
                 }   else {
-
+                    zoom.carousel.stopSpin();
                 }
+
+//         Outtake
+
+                if (gamepad1.x) {
+                    zoom.outtake.moveForward(.2);
             }
 
     }
