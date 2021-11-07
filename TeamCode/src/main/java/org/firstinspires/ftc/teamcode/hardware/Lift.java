@@ -3,7 +3,7 @@ package org.firstinspires.ftc.teamcode.hardware;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 /**
-Author: Slimeafro
+Author: Slimeafro and jayzeekay
 Date: 10.7.21
 System: Lift
  */
@@ -24,6 +24,8 @@ public class Lift {
    public void down (double power) {
        rotate(-power);
    }
+
+   public DcMotor getLift () {return lift;}
 
    public void stopLift () {
        rotate(0);

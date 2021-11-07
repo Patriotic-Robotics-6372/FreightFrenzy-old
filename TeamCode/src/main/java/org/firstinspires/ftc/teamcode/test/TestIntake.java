@@ -18,7 +18,7 @@ public class TestIntake extends LinearOpMode {
         sleep(5000);
         intake.spinBackward(0.5);
         sleep(5000);
-        intake. stop();
+        //intake.stop();
         sleep(5000);
     }
 }
