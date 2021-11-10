@@ -36,7 +36,7 @@ public class slimeTeleOp2 extends LinearOpMode {
 
 //        Intake
 
-            if (gamepad1.left_trigger > 0.1) {
+            if (gamepad2.left_trigger > 0.1) {
                 zoom.intake.spinForward(.2);
             } else {
                 zoom.intake.stopIT();
@@ -50,11 +50,37 @@ public class slimeTeleOp2 extends LinearOpMode {
                 zoom.carousel.stopSpin();
             }
 
+            if (gamepad1.left_bumper) {
+                zoom.carousel.leftSpin(.1);
+            } else {
+                zoom.carousel.stopSpin();   
+            }
+
 //         Outtake
 
-            if (gamepad1.x) {
-                zoom.outtake.moveForward(.2);
+            if (gamepad2.x) {
+                zoom.outtake.backPosition(180/300);
             }
+
+            if (gamepad2.y) {
+                zoom.outtake.neutralPosition(0);
+            }
+
+            if (gamepad2.b) {
+                zoom.outtake.forwardPosition(1);
+            }
+
+//         Lift
+
+            if (gamepad2.dpad_up) {
+                zoom.lift.up(.3);
+            } else
+
+            if (gamepad2.dpad_down) {
+                zoom.lift.down(.3);
+            }
+
+
 
         }
     }

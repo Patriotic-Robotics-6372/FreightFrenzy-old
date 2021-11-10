@@ -12,7 +12,7 @@ Robot zoom = new Robot();
     public void runOpMode() throws InterruptedException {
         waitForStart();
         while(opModeIsActive()) {
-            
+
         }
     }
 }
