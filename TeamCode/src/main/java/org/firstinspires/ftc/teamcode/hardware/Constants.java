@@ -4,6 +4,10 @@ public interface Constants {
 
     int STOP = 0;
 
+    double forwardPos = 15 / 300.0;
+    double neutralPos = 90 / 300.0;
+    double backPos = 225 / 300.0;
+
     double posRing = 30 / 180;
     double posRing2 = 0 / 180;
 

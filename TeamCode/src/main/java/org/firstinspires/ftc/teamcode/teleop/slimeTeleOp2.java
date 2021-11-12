@@ -22,7 +22,7 @@ public class slimeTeleOp2 extends LinearOpMode {
         telemetry.setMsTransmissionInterval(50);
         zoom.init(hardwareMap, telemetry);
         waitForStart();
-        zoom.outtake.neutralPosition(0);
+        zoom.outtake.neutralPosition();
         while (opModeIsActive()) {
 
 //        Movement
@@ -71,15 +71,15 @@ public class slimeTeleOp2 extends LinearOpMode {
 //         Outtake
 
             if (gamepad2.x) {
-                zoom.outtake.backPosition(0);
+                zoom.outtake.backPosition();
             }
 
             if (gamepad2.y) {
-                zoom.outtake.neutralPosition(0.2);
+                zoom.outtake.neutralPosition();
             }
 
             if (gamepad2.b) {
-                zoom.outtake.forwardPosition(0.5);
+                zoom.outtake.forwardPosition();
             }
 
 //         Lift
