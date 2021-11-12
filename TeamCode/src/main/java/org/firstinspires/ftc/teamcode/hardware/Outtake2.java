@@ -19,4 +19,8 @@ public class Outtake2 {
     public void forwardPosition(double position) {
         outtake2.setPosition(position);
     }
+
+    public Servo getOuttake2() {
+        return outtake2;
+    }
 }

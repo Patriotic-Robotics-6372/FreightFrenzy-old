@@ -10,7 +10,7 @@ import org.firstinspires.ftc.teamcode.hardware.Robot;
 
 import static org.firstinspires.ftc.teamcode.hardware.Constants.Status.NORMAL;
 
-
+@TeleOp (name = "slimeTeleOp2", group = "PRTeleop")
 public class slimeTeleOp2 extends LinearOpMode {
 
 
@@ -18,10 +18,16 @@ public class slimeTeleOp2 extends LinearOpMode {
 
     @Override
     public void runOpMode() throws InterruptedException {
+
+        telemetry.setMsTransmissionInterval(50);
+        zoom.init(hardwareMap, telemetry);
+        waitForStart();
+        zoom.outtake.neutralPosition(0);
         while (opModeIsActive()) {
 
 //        Movement
 
+            /*
                 if (Math.abs(gamepad1.left_stick_y) > 0.1) {
                     zoom.drivetrain.forward(gamepad1.left_stick_y);
                 } else {
@@ -33,11 +39,17 @@ public class slimeTeleOp2 extends LinearOpMode {
                 } else {
                     zoom.drivetrain.stopMotors();
                 }
+             */
+            if (Math.abs(gamepad1.right_stick_y) > 0.1 || Math.abs(gamepad1.left_stick_y) > 0.1) {
+                zoom.drivetrain.move(gamepad1.right_stick_y, -gamepad1.left_stick_y, gamepad1.right_stick_y, -gamepad1.left_stick_y);
+            } else {
+                zoom.drivetrain.stopMotors();
+            }
 
 //        Intake
 
             if (gamepad2.left_trigger > 0.1) {
-                zoom.intake.spinForward(.2);
+                zoom.intake.spinForward(.3);
             } else {
                 zoom.intake.stopIT();
             }
@@ -45,13 +57,13 @@ public class slimeTeleOp2 extends LinearOpMode {
 //        Carousel
 
             if (gamepad1.right_bumper) {
-                zoom.carousel.rightSpin(.1);
+                zoom.carousel.rightSpin(1);
             } else {
                 zoom.carousel.stopSpin();
             }
 
             if (gamepad1.left_bumper) {
-                zoom.carousel.leftSpin(.1);
+                zoom.carousel.leftSpin(1);
             } else {
                 zoom.carousel.stopSpin();   
             }
@@ -59,29 +71,30 @@ public class slimeTeleOp2 extends LinearOpMode {
 //         Outtake
 
             if (gamepad2.x) {
-                zoom.outtake.backPosition(180/300);
+                zoom.outtake.backPosition(0);
             }
 
             if (gamepad2.y) {
-                zoom.outtake.neutralPosition(0);
+                zoom.outtake.neutralPosition(0.2);
             }
 
             if (gamepad2.b) {
-                zoom.outtake.forwardPosition(1);
+                zoom.outtake.forwardPosition(0.5);
             }
 
 //         Lift
 
             if (gamepad2.dpad_up) {
                 zoom.lift.up(.3);
-            } else
-
-            if (gamepad2.dpad_down) {
+            } else if (gamepad2.dpad_down) {
                 zoom.lift.down(.3);
+            } else {
+                zoom.lift.stopLift();
             }
 
 
-
+            telemetry.addData("pos", zoom.outtake.getOuttake2().getPosition());
+            telemetry.update();
         }
     }
 }

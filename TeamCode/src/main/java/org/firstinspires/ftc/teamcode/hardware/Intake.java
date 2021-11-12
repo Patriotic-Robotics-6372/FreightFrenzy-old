@@ -29,4 +29,8 @@ public class  Intake {
         intake. setPower(0);
     }
 
+    public DcMotor getIntake() {
+        return intake;
+    }
+
 }
