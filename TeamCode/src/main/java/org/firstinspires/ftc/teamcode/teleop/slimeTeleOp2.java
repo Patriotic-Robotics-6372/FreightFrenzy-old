@@ -20,6 +20,8 @@ public class slimeTeleOp2 extends LinearOpMode {
     public void runOpMode() throws InterruptedException {
 
         telemetry.setMsTransmissionInterval(50);
+        telemetry.addData("version", "2");
+        telemetry.update();
         zoom.init(hardwareMap, telemetry);
         waitForStart();
         zoom.outtake.neutralPosition();
@@ -49,7 +51,9 @@ public class slimeTeleOp2 extends LinearOpMode {
 //        Intake
 
             if (gamepad2.left_trigger > 0.1) {
-                zoom.intake.spinForward(.3);
+                zoom.intake.spinForward(1);
+            } else if (gamepad2.right_trigger > 0.1) {
+                zoom.intake.spinBackward(1);
             } else {
                 zoom.intake.stopIT();
             }
@@ -85,9 +89,9 @@ public class slimeTeleOp2 extends LinearOpMode {
 //         Lift
 
             if (gamepad2.dpad_up) {
-                zoom.lift.up(.3);
+                zoom.lift.up(.5);
             } else if (gamepad2.dpad_down) {
-                zoom.lift.down(.3);
+                zoom.lift.down(.5);
             } else {
                 zoom.lift.stopLift();
             }

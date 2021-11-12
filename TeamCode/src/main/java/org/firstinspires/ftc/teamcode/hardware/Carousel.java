@@ -22,11 +22,11 @@ public class Carousel {
    //Different spins depending on what side of the field we are on
 
    public void rightSpin(double rotation) {
-       spin(rotation);
+       rightCarousel.setPower(rotation);
    }
 
    public void leftSpin (double rotation) {
-       spin(-rotation);
+       leftCarousel.setPower(-rotation);
    }
 
    public void stopSpin () {
