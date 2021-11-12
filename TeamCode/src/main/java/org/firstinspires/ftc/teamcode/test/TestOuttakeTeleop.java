@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.Servo;
 
-@TeleOp (name = "TestOuttakeTeleop")
+@TeleOp (name = "TestOuttakeTuner")
 public class TestOuttakeTeleop extends LinearOpMode {
 
     Servo outtake;
@@ -43,7 +43,7 @@ public class TestOuttakeTeleop extends LinearOpMode {
             checkPos();
             outtake.setPosition(position);
             telemetry.addData("position var", position);
-            telemetry.addData("pos", outtake.getPosition());
+            telemetry.addData("servo pos", outtake.getPosition());
             telemetry.addData("yToggle", yToggle);
             telemetry.addData("aToggle", aToggle);
             telemetry.update();
