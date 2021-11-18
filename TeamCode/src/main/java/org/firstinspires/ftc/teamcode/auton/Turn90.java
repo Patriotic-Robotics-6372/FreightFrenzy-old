@@ -5,8 +5,8 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.firstinspires.ftc.teamcode.hardware.Robot2;
 
-@Autonomous (name = "forward", group = "PRTest")
-public class forward extends LinearOpMode {
+@Autonomous (name = "Turn90", group = "PRTest")
+public class Turn90 extends LinearOpMode {
 
     Robot2 zoom = new Robot2();
 
@@ -14,11 +14,13 @@ public class forward extends LinearOpMode {
     public void runOpMode() throws InterruptedException {
         zoom.init(hardwareMap, telemetry);
         zoom.drivetrain.setPower(.5);
+        zoom.drivetrain.setTelemetry(telemetry);
         waitForStart();
         while (opModeIsActive()) {
-            zoom.drivetrain.forward(6);
+            zoom.drivetrain.pointTurnLeft();
             sleep(100);
             zoom.drivetrain.stop();
+            break;
         }
     }
 }
