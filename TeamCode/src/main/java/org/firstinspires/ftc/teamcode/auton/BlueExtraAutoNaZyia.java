@@ -14,8 +14,9 @@ public class BlueExtraAutoNaZyia extends LinearOpMode {
     @Override
     public void runOpMode() throws InterruptedException {
         zoom.init(hardwareMap, telemetry);
-        zoom.drivetrain.setPower(.5);
+        zoom.drivetrain.setPower(.3);
         zoom.drivetrain.setTelemetry(telemetry);
+        zoom.drivetrain.useBrake(true);
         waitForStart();
         while (opModeIsActive()) {
             /*
@@ -35,23 +36,29 @@ public class BlueExtraAutoNaZyia extends LinearOpMode {
             */
 
             //forward
-            zoom.drivetrain.forward(3);
+            zoom.drivetrain.forward(5);
             sleep(500);
             //turn left 135 degrees
             zoom.drivetrain.pointTurnLeft();
             sleep(500);
             //backward
-            zoom.drivetrain.backward(22);
+            zoom.drivetrain.backward(28);
             sleep(500);
             //turn on carousel
             zoom.carousel.rightSpin(.5);
-            sleep(3000);
+            sleep(3500);
             zoom.carousel.stopSpin();
+            //forward
+            zoom.drivetrain.forward(2);
+            //turn right
+            zoom.drivetrain.pointTurn(Constants.Status.RIGHT, 13.5);
+            sleep(500);
+            //forward
+            zoom.drivetrain.forward(22.35);
             //stop
             zoom.drivetrain.stop();
-
-
             break;
+            //LETS FUCKING GO
         }
     }
 }

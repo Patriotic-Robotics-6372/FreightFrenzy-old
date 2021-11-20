@@ -27,7 +27,7 @@ public class RedleftNaZyia extends LinearOpMode {
             zoom.drivetrain.stop();
             sleep(500);
             //forward
-            zoom.drivetrain.forward(19);
+            zoom.drivetrain.forward(23);
             //stop
             zoom.drivetrain.stop();
             break;

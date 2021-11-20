@@ -96,7 +96,7 @@ public class slimeTeleOp2 extends LinearOpMode {
                 zoom.lift.stopLift();
             }
 
-
+//          Telem
             telemetry.addData("pos", zoom.outtake.getOuttake2().getPosition());
             telemetry.update();
         }
