@@ -6,8 +6,8 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import org.firstinspires.ftc.teamcode.hardware.Constants;
 import org.firstinspires.ftc.teamcode.hardware.Robot2;
 
-@Autonomous (name = "BlueExtraAutoNaZyia", group = "PRTest")
-public class BlueExtraAutoNaZyia extends LinearOpMode {
+@Autonomous (name = "BlueRight", group = "PRTest")
+public class BlueRight extends LinearOpMode {
 
     Robot2 zoom = new Robot2();
 
@@ -18,6 +18,7 @@ public class BlueExtraAutoNaZyia extends LinearOpMode {
         zoom.drivetrain.setTelemetry(telemetry);
         zoom.drivetrain.useBrake(true);
         waitForStart();
+        //Line Up With Second Panel from Right, Left Seam
         while (opModeIsActive()) {
             /*
             // forward
