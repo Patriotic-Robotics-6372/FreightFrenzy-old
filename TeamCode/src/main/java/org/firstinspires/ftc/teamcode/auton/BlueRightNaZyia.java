@@ -1,11 +1,13 @@
 package org.firstinspires.ftc.teamcode.auton;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.firstinspires.ftc.teamcode.hardware.Robot2;
 
 @Autonomous (name = "BlueRightNaZyia", group = "PRTest")
+@Disabled
 public class BlueRightNaZyia extends LinearOpMode {
 
     Robot2 zoom = new Robot2();

@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.auton;
+package org.firstinspires.ftc.teamcode.auton.working;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -6,8 +6,8 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import org.firstinspires.ftc.teamcode.hardware.Constants;
 import org.firstinspires.ftc.teamcode.hardware.Robot2;
 
-@Autonomous (name = "BlueLeft", group = "PRTest")
-public class BlueLeft extends LinearOpMode {
+@Autonomous (name = "RedRight", group = "PRTest")
+public class RedRight extends LinearOpMode {
 
 Robot2 robot = new Robot2();
 
@@ -24,7 +24,7 @@ Robot2 robot = new Robot2();
             robot.drivetrain.forward(16);;
             sleep(500);
             // turn left 90 degrees
-            robot.drivetrain.pointTurn(Constants.Status.RIGHT, 14.1);
+            robot.drivetrain.pointTurn(Constants.Status.LEFT, 14.1);
             //backwards
             robot.drivetrain.forward(8);
             sleep(600);

@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.auton;
+package org.firstinspires.ftc.teamcode.auton.working;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -6,8 +6,8 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import org.firstinspires.ftc.teamcode.hardware.Constants;
 import org.firstinspires.ftc.teamcode.hardware.Robot2;
 
-@Autonomous (name = "BlueRight", group = "PRTest")
-public class BlueRight extends LinearOpMode {
+@Autonomous (name = "RedLeft", group = "PRTest")
+public class RedLeft extends LinearOpMode {
 
     Robot2 zoom = new Robot2();
 
@@ -20,39 +20,25 @@ public class BlueRight extends LinearOpMode {
         waitForStart();
         //Line Up With Second Panel from Right, Left Seam
         while (opModeIsActive()) {
-            /*
-            // forward
-            zoom.drivetrain.forward(22.5);
-            //turn right
-            zoom.drivetrain.stop();
-            sleep(500);
-            zoom.drivetrain.pointTurnRight();
-           //stop
-            zoom.drivetrain.stop();
-            sleep(500);
-            //forward
-            zoom.drivetrain.forward(19);
-            //stop
-            zoom.drivetrain.stop();
-            */
+
 
             //forward
             zoom.drivetrain.forward(5);
             sleep(500);
             //turn left 135 degrees
-            zoom.drivetrain.pointTurnLeft();
+            zoom.drivetrain.pointTurnRight();
             sleep(500);
             //backward
             zoom.drivetrain.backward(28);
             sleep(500);
             //turn on carousel
-            zoom.carousel.rightSpin(.5);
+            zoom.carousel.leftSpin(.5);
             sleep(3500);
             zoom.carousel.stopSpin();
             //forward
             zoom.drivetrain.forward(2);
             //turn right
-            zoom.drivetrain.pointTurn(Constants.Status.RIGHT, 13.5);
+            zoom.drivetrain.pointTurn(Constants.Status.LEFT, 13.5);
             sleep(500);
             //forward
             zoom.drivetrain.forward(22.35);
