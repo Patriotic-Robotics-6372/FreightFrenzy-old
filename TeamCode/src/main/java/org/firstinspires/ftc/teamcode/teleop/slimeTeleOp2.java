@@ -10,7 +10,7 @@ import org.firstinspires.ftc.teamcode.hardware.Robot;
 
 import static org.firstinspires.ftc.teamcode.hardware.Constants.Status.NORMAL;
 
-@TeleOp (name = "slimeTeleOp2", group = "PRTeleop")
+@TeleOp (name = "PRTELEOP", group = "PRTeleop")
 public class slimeTeleOp2 extends LinearOpMode {
 
 

@@ -35,4 +35,9 @@ public class Lift {
        lift.setPower(l);
    }
 
+   public void upThree(double l) {}
+
+    public void setLift(DcMotor lift) {
+        lift.
+    }
 }

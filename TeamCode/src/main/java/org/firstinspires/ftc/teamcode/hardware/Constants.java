@@ -8,6 +8,10 @@ public interface Constants {
     double neutralPos = 90 / 300.0;
     double backPos = 225 / 300.0;
 
+    double bowlOne = 10;
+    double bowlTwo = 20;
+    double bowlThree = 30;
+
 
 
 
