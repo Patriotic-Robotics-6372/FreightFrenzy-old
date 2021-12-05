@@ -23,6 +23,10 @@ public class Robot2 {
         outtake = new Outtake2(hwMap.servo.get("outtake"));
         lift = new Lift(hwMap.dcMotor.get("lift"));
         carousel = new Carousel(hwMap.dcMotor.get("leftCarousel"), hwMap.dcMotor.get("rightCarousel"));
+
+        lift.setMaxPower(.8);
+        lift.useBrake(true);
+        lift.useEncoders(true);
     }
 
 

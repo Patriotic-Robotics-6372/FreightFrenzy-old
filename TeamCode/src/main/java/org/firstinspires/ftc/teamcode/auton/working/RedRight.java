@@ -17,6 +17,7 @@ Robot2 robot = new Robot2();
         robot.drivetrain.setPower(.4);
         robot.drivetrain.setTelemetry(telemetry);
         robot.drivetrain.useBrake(true);
+        robot.outtake.neutralPosition();
         waitForStart();
         //Line Up With 3rd Panel from Right, Left Seam
         while(opModeIsActive()) {
@@ -30,7 +31,7 @@ Robot2 robot = new Robot2();
             sleep(600);
             // forward
             robot.drivetrain.setPower(.9);
-            robot.drivetrain.backward(75);
+            robot.drivetrain.backward(80);
             // stop
             robot.drivetrain.stop();
 

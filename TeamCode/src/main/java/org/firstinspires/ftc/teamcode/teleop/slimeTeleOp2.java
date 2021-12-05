@@ -16,16 +16,39 @@ public class slimeTeleOp2 extends LinearOpMode {
 
     Robot zoom = new Robot();
 
+    boolean lbState, lbCurr, lbPrev, rbState, rbCurr, rbPrev;
+
     @Override
     public void runOpMode() throws InterruptedException {
 
         telemetry.setMsTransmissionInterval(50);
         telemetry.addData("version", "2");
         telemetry.update();
+        telemetry.setMsTransmissionInterval(50);
         zoom.init(hardwareMap, telemetry);
+//        zoom.lift.init();
+//        zoom.lift.setTelemetry(telemetry);
+//        zoom.lift.useEncoders(true);
+//        zoom.lift.useBrake(true);
+//        zoom.lift.setMaxPower(.3);
         waitForStart();
         zoom.outtake.neutralPosition();
         while (opModeIsActive()) {
+
+//            lbState = gamepad2.dpad_down;
+//            lbPrev = lbCurr;
+//            lbCurr = lbState;
+//
+//            rbState = gamepad2.dpad_up;
+//            rbPrev = rbCurr;
+//            rbCurr = rbState;
+//
+//            if (!lbPrev && lbCurr) {
+//                zoom.lift.decreaseLevel();
+//            }
+//            if (!rbPrev && rbCurr) {
+//                zoom.lift.increaseLevel();
+//            }
 
 //        Movement
 
@@ -44,7 +67,12 @@ public class slimeTeleOp2 extends LinearOpMode {
              */
             if (Math.abs(gamepad1.right_stick_y) > 0.1 || Math.abs(gamepad1.left_stick_y) > 0.1) {
                 zoom.drivetrain.move(gamepad1.right_stick_y, -gamepad1.left_stick_y, gamepad1.right_stick_y, -gamepad1.left_stick_y);
-            } else {
+            } else if (gamepad1.dpad_down) {
+                zoom.drivetrain.forward(1);
+            } else if (gamepad1.dpad_up) {
+                zoom.drivetrain.backward(1);
+            }
+            else {
                 zoom.drivetrain.stopMotors();
             }
 
@@ -52,8 +80,10 @@ public class slimeTeleOp2 extends LinearOpMode {
 
             if (gamepad2.left_trigger > 0.1) {
                 zoom.intake.spinForward(1);
+                //zoom.outtake.backPosition();
             } else if (gamepad2.right_trigger > 0.1) {
                 zoom.intake.spinBackward(1);
+                //zoom.outtake.neutralPosition();
             } else {
                 zoom.intake.stopIT();
             }
@@ -88,6 +118,16 @@ public class slimeTeleOp2 extends LinearOpMode {
 
 //         Lift
 
+            /*
+            if (gamepad2.dpad_up) {
+                zoom.lift.setLevel(2);
+            } else if (gamepad2.dpad_down) {
+                zoom.lift.setLevel(1);
+            } else {
+                zoom.lift.setLevel(0);
+            }
+             */
+
             if (gamepad2.dpad_up) {
                 zoom.lift.up(.5);
             } else if (gamepad2.dpad_down) {
@@ -96,8 +136,29 @@ public class slimeTeleOp2 extends LinearOpMode {
                 zoom.lift.stopLift();
             }
 
+            //zoom.lift.updateLevel();
+
+            //telemetry.addData("lift level", zoom.lift.getCurrentLevel());
+            //telemetry.addData("lift pow", zoom.lift.getLift().getPower());
+            //telemetry.addData("lift enc", zoom.lift.getLift().getCurrentPosition());
+
+            telemetry.addData("gamepad1 left stick y", gamepad1.left_stick_y);
+            telemetry.addData("gamepad1 right stick y", gamepad1.right_stick_y);
+
+
 //          Telem
-            telemetry.addData("pos", zoom.outtake.getOuttake2().getPosition());
+            //telemetry.addData("pos", zoom.outtake.getOuttake2().getPosition());
+            //telemetry.update();
+            telemetry.addData("outtake back", "x");
+            telemetry.addData("outtake neutral", "y");
+            telemetry.addData("outtake forward", "b");
+            telemetry.addData("lift 2", "dpad_up");
+            telemetry.addData("lift 1", "dpad_down");
+            telemetry.addData("lift 0", "neutral");
+            telemetry.addData("intake in", "left_trigger");
+            telemetry.addData("intake out", "right_trigger");
+            telemetry.addData("lift level", zoom.lift.getCurrentLevel());
+            telemetry.addData("lift tick", zoom.lift.getCurrentTick());
             telemetry.update();
         }
     }

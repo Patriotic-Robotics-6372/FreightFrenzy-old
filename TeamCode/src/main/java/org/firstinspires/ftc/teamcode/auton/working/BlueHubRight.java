@@ -7,12 +7,11 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.teamcode.hardware.Robot2;
 
-@Autonomous (name = "RedHubLeft", group = "PRTEST")
-public class RedHubLeft extends LinearOpMode {
+@Autonomous (name = "BlueHubRight", group = "PRTEST")
+public class BlueHubRight extends LinearOpMode {
 
-   Robot2 zoom = new Robot2();
+    Robot2 zoom = new Robot2();
     @Override
-
 
     public void runOpMode() throws InterruptedException {
         zoom.init(hardwareMap, telemetry);
@@ -33,13 +32,13 @@ public class RedHubLeft extends LinearOpMode {
             zoom.drivetrain.forward(12);
             sleep(250);
             //turn
-            zoom.drivetrain.pointTurnLeft();
+            zoom.drivetrain.pointTurnRight();
             sleep(250);
             //backward
             zoom.drivetrain.backward(24);
             sleep(250);
             //turn
-            zoom.drivetrain.pointTurnRight();
+            zoom.drivetrain.pointTurnLeft();
             sleep(250);
             // forward
             zoom.drivetrain.forward(10);
@@ -61,18 +60,17 @@ public class RedHubLeft extends LinearOpMode {
             zoom.drivetrain.backward(16);
             sleep(250);
 
-            zoom.drivetrain.pointTurnLeft();
+            zoom.drivetrain.pointTurnRight();
             sleep(250);
 
             zoom.drivetrain.forward(56);
             sleep(250);
 
-            zoom.drivetrain.pointTurnRight();
+            zoom.drivetrain.pointTurnLeft();
             sleep(250);
 
             zoom.drivetrain.forward(18);
             sleep(250);
-
 
             //lift down
             //backward

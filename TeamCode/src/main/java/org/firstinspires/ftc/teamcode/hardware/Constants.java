@@ -6,24 +6,30 @@ public interface Constants {
 
     double forwardPos = 15 / 300.0;
     double neutralPos = 90 / 300.0;
-    double backPos = 225 / 300.0;
+    double backPos = 240 / 300.0;
 
     double bowlOne = 10;
     double bowlTwo = 20;
     double bowlThree = 30;
 
-
-
-
-    double posRing = 30 / 180;
-    double posRing2 = 0 / 180;
-
     double TICKS_PER_IN = 537.6/(4*Math.PI);
 
     int LIFT_THRESHOLD = -500;
 
-    int SHOOT_UP_START = 300;
-    int SHOOT_UP_SETPOINT = 800;
+    int MIN_LEVEL = -2;
+    int MAX_LEVEL = 5;
+
+    int LEVEL_SUBTWO = 0;
+    int LEVEL_SUBONE = 0;
+
+    int LEVEL_ZERO = 0;
+
+    int LEVEL_ONE = 250;
+    int LEVEL_TWO = 1000;
+    int LEVEL_THREE = 0;
+
+    int LEVEL_FOUR = 0;
+    int LEVEL_FIVE = 0;
 
     enum Status {
         FORWARDS, BACKWARDS,

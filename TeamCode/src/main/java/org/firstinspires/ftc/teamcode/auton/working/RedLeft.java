@@ -17,6 +17,7 @@ public class RedLeft extends LinearOpMode {
         zoom.drivetrain.setPower(.3);
         zoom.drivetrain.setTelemetry(telemetry);
         zoom.drivetrain.useBrake(true);
+        zoom.outtake.neutralPosition();
         waitForStart();
         //Line Up With Second Panel from Right, Left Seam
         while (opModeIsActive()) {
