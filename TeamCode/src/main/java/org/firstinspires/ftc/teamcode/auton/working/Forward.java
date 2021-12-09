@@ -6,8 +6,8 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import org.firstinspires.ftc.teamcode.hardware.Constants;
 import org.firstinspires.ftc.teamcode.hardware.Robot2;
 
-@Autonomous (name = "RedLeft", group = "PRTest")
-public class RedLeft extends LinearOpMode {
+@Autonomous (name = "TestWheels", group = "PRTest")
+public class Forward extends LinearOpMode {
 
     Robot2 zoom = new Robot2();
 
@@ -21,30 +21,14 @@ public class RedLeft extends LinearOpMode {
         waitForStart();
         //Line Up With Second Panel from Right, Left Seam
         while (opModeIsActive()) {
-
-
             //forward
             zoom.drivetrain.forward(5);
-            sleep(500);
-            //turn left 135 degrees
+            sleep(10000);
+            zoom.drivetrain.forward(3);
+            sleep(10000);
+            zoom.drivetrain.forward(24);
+            sleep(5000);
             zoom.drivetrain.pointTurnRight();
-            sleep(500);
-            //backward
-            zoom.drivetrain.backward(28.5);
-            sleep(500);
-            //turn on carousel
-            zoom.carousel.leftSpin(.5);
-            sleep(3500);
-            zoom.carousel.stopSpin();
-            //forward
-            zoom.drivetrain.forward(2);
-            //turn right
-            zoom.drivetrain.pointTurnLeft();
-            sleep(500);
-            //forward
-            zoom.drivetrain.forward(22.35);
-            //stop
-            zoom.drivetrain.stop();
             break;
             //LETS FUCKING GO
         }

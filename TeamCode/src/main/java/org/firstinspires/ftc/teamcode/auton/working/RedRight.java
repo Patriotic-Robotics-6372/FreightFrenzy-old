@@ -31,7 +31,7 @@ Robot2 robot = new Robot2();
             sleep(600);
             // forward
             robot.drivetrain.setPower(.9);
-            robot.drivetrain.backward(80);
+            robot.drivetrain.backward(60);
             // stop
             robot.drivetrain.stop();
 

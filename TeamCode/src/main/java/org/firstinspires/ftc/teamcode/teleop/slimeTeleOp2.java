@@ -17,7 +17,7 @@ public class slimeTeleOp2 extends LinearOpMode {
     Robot zoom = new Robot();
 
     boolean lbState, lbCurr, lbPrev, rbState, rbCurr, rbPrev;
-
+    boolean rTCurr, rTPrev, rTState, rTToggle;
     @Override
     public void runOpMode() throws InterruptedException {
 
@@ -65,16 +65,40 @@ public class slimeTeleOp2 extends LinearOpMode {
                     zoom.drivetrain.stopMotors();
                 }
              */
-            if (Math.abs(gamepad1.right_stick_y) > 0.1 || Math.abs(gamepad1.left_stick_y) > 0.1) {
-                zoom.drivetrain.move(gamepad1.right_stick_y, -gamepad1.left_stick_y, gamepad1.right_stick_y, -gamepad1.left_stick_y);
-            } else if (gamepad1.dpad_down) {
-                zoom.drivetrain.forward(1);
-            } else if (gamepad1.dpad_up) {
-                zoom.drivetrain.backward(1);
+
+            rTState = gamepad1.right_trigger > 0.1;
+            rTPrev = rTCurr;
+            rTCurr = rTState;
+
+            if (rTCurr && !rTPrev) {
+                rTToggle = !rTToggle;
             }
-            else {
-                zoom.drivetrain.stopMotors();
+
+            if (!rTToggle) {
+                if (Math.abs(gamepad1.right_stick_y) > 0.1 || Math.abs(gamepad1.left_stick_y) > 0.1) {
+                    zoom.drivetrain.move(gamepad1.right_stick_y, -gamepad1.left_stick_y, gamepad1.right_stick_y, -gamepad1.left_stick_y);
+                } else if (gamepad1.dpad_down) {
+                    zoom.drivetrain.forward(1);
+                } else if (gamepad1.dpad_up) {
+                    zoom.drivetrain.backward(1);
+                }
+                else {
+                    zoom.drivetrain.stopMotors();
+                }
+            } else {
+                if (Math.abs(gamepad1.right_stick_y) > 0.1 || Math.abs(gamepad1.left_stick_y) > 0.1) {
+                    zoom.drivetrain.move(-gamepad1.right_stick_y, gamepad1.left_stick_y, -gamepad1.right_stick_y, gamepad1.left_stick_y);
+                } else if (gamepad1.dpad_down) {
+                    zoom.drivetrain.backward(1);
+                } else if (gamepad1.dpad_up) {
+                    zoom.drivetrain.forward(1);
+                }
+                else {
+                    zoom.drivetrain.stopMotors();
+                }
             }
+
+
 
 //        Intake
 

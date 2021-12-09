@@ -218,12 +218,12 @@ public class DrivetrainJ implements Constants {
 
     // 19 at field. 18.5 at home
     public void pointTurnRight() {
-        pointTurn(Status.RIGHT,  12.7);
+        pointTurn(Status.RIGHT,  26.60);
     }
 
     // 19 at field. 18.5 at home
     public void pointTurnLeft() {
-        pointTurn(Status.LEFT,  12.7);
+        pointTurn(Status.LEFT,  26.60);
     }
 
     /**

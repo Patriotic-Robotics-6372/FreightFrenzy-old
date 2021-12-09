@@ -12,7 +12,7 @@ public interface Constants {
     double bowlTwo = 20;
     double bowlThree = 30;
 
-    double TICKS_PER_IN = 537.6/(4*Math.PI);
+    double TICKS_PER_IN = (537.6/((120 / 25.4)*Math.PI)) * (5.0/6.0);
 
     int LIFT_THRESHOLD = -500;
 
