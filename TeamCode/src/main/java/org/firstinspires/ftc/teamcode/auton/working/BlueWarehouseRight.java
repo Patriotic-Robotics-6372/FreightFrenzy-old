@@ -3,9 +3,10 @@ package org.firstinspires.ftc.teamcode.auton.working;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
+import org.firstinspires.ftc.teamcode.hardware.Constants;
 import org.firstinspires.ftc.teamcode.hardware.Robot2;
 
-@Autonomous (name = "TestWheels", group = "PRTest")
+@Autonomous (name = "BlueWarehouseRight", group = "PRTest")
 public class BlueWarehouseRight extends LinearOpMode {
 
     Robot2 zoom = new Robot2();
@@ -21,11 +22,11 @@ public class BlueWarehouseRight extends LinearOpMode {
         //Line Up With Second Panel from Right, Left Seam
         while (opModeIsActive()) {
             //forward
-            zoom.drivetrain.forward(18);
+            zoom.drivetrain.forward(16);
             sleep(1000);
-            zoom.drivetrain.pointTurnLeft();
+            zoom.drivetrain.pointTurn(Constants.Status.LEFT, 24);
             sleep(500);
-            zoom.drivetrain.forward(42);
+            zoom.drivetrain.forward(70);
             break;
             //LETS FUCKING GO
         }
