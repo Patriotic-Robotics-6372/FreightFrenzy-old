@@ -18,6 +18,10 @@ Robot2 robot = new Robot2();
         robot.drivetrain.setTelemetry(telemetry);
         robot.drivetrain.useBrake(true);
         robot.outtake.neutralPosition();
+        telemetry.setMsTransmissionInterval(50);
+        telemetry.addData("Desc", "");
+        telemetry.addData("Align", "3rd Panel from Left, Right Seam");
+        telemetry.update();
         waitForStart();
         //Line Up With 3rd Panel from Right, Left Seam
         while(opModeIsActive()) {
@@ -25,13 +29,13 @@ Robot2 robot = new Robot2();
             robot.drivetrain.forward(16);;
             sleep(500);
             // turn left 90 degrees
-            robot.drivetrain.pointTurn(Constants.Status.LEFT, 14.1);
+            robot.drivetrain.pointTurnLeft();
             //backwards
             robot.drivetrain.forward(8);
             sleep(600);
             // forward
-            robot.drivetrain.setPower(.9);
-            robot.drivetrain.backward(60);
+            robot.drivetrain.setPower(.6);
+            robot.drivetrain.backward(90);
             // stop
             robot.drivetrain.stop();
 

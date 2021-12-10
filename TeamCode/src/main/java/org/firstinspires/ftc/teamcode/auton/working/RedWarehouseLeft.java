@@ -19,13 +19,17 @@ public class RedWarehouseLeft extends LinearOpMode {
         zoom.drivetrain.setTelemetry(telemetry);
         zoom.drivetrain.useBrake(true);
         zoom.outtake.neutralPosition();
+//        telemetry.setMsTransmissionInterval(50);
+//        telemetry.addData("Desc", "");
+//        telemetry.addData("Align", "2nd Panel from Left, Right Seam");
+//        telemetry.update();
         waitForStart();
         //Line Up With Second Panel from Right, Left Seam
         while (opModeIsActive()) {
             //forward
             zoom.drivetrain.forward(16);
             sleep(1000);
-            zoom.drivetrain.pointTurn(Constants.Status.RIGHT, 21);
+            zoom.drivetrain.pointTurnRight();
             sleep(500);
             zoom.drivetrain.setPower(.5);
             zoom.drivetrain.forward(90);

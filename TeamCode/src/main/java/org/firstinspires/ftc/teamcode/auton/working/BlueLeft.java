@@ -18,6 +18,10 @@ Robot2 robot = new Robot2();
         robot.drivetrain.setTelemetry(telemetry);
         robot.drivetrain.useBrake(true);
         robot.outtake.neutralPosition();
+        telemetry.setMsTransmissionInterval(50);
+        telemetry.addData("Desc", "");
+        telemetry.addData("Align", "3rd Panel from Right, Left Seam");
+        telemetry.update();
         waitForStart();
         //Line Up With 3rd Panel from Right, Left Seam
         while(opModeIsActive()) {

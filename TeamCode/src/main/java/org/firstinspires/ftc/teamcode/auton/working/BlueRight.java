@@ -18,6 +18,10 @@ public class BlueRight extends LinearOpMode {
         zoom.drivetrain.setTelemetry(telemetry);
         zoom.drivetrain.useBrake(true);
         zoom.outtake.neutralPosition();
+        telemetry.setMsTransmissionInterval(50);
+        telemetry.addData("Desc", "");
+        telemetry.addData("Align", "2nd Panel from Right, Left Seam");
+        telemetry.update();
         waitForStart();
         //Line Up With Second Panel from Right, Left Seam
         while (opModeIsActive()) {

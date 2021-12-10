@@ -23,6 +23,19 @@ public class slimeTeleOp2 extends LinearOpMode {
 
         telemetry.setMsTransmissionInterval(50);
         telemetry.addData("version", "2");
+        telemetry.setMsTransmissionInterval(50);
+        telemetry.addData("Desc", "");
+        telemetry.addData("How to Use", "GP1 | Left Stick: Moves Left Side of Drivetrain\n" +
+                "GP2 | Right Stick: Moves Ride Side of Drivetrain\n" +
+                "GP2 | Right Trigger: Powers Intake\n" +
+                "GP1 | Right Bumper: Right Carousel Spins\n" +
+                "GP1 | Left Bumper: Left Carousel Spins\n" +
+                "GP2 | X: Moves Hopper Back\n" +
+                "GP2 | Y: Moves Hopper to Neutral\n" +
+                "GP2 | B: Moves Hopper Forward\n" +
+                "GP2 | DPad Up: Moves Lift Up\n" +
+                "GP2 | DPad Down: Moves Lift Down");
+        telemetry.update();
         telemetry.update();
         telemetry.setMsTransmissionInterval(50);
         zoom.init(hardwareMap, telemetry);

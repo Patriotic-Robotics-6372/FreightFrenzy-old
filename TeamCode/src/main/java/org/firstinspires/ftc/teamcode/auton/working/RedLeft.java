@@ -18,19 +18,23 @@ public class RedLeft extends LinearOpMode {
         zoom.drivetrain.setTelemetry(telemetry);
         zoom.drivetrain.useBrake(true);
         zoom.outtake.neutralPosition();
+        telemetry.setMsTransmissionInterval(50);
+        telemetry.addData("Desc", "");
+        telemetry.addData("Align", "2nd Panel from Left, Right Seam");
+        telemetry.update();
         waitForStart();
         //Line Up With Second Panel from Right, Left Seam
         while (opModeIsActive()) {
 
 
             //forward
-            zoom.drivetrain.forward(5);
+            zoom.drivetrain.forward(4.5);
             sleep(500);
             //turn left 135 degrees
-            zoom.drivetrain.pointTurnRight();
+            zoom.drivetrain.pointTurn(Constants.Status.RIGHT, 24.45);
             sleep(500);
             //backward
-            zoom.drivetrain.backward(28.5);
+            zoom.drivetrain.backward(29.5);
             sleep(500);
             //turn on carousel
             zoom.carousel.leftSpin(.5);
@@ -39,10 +43,10 @@ public class RedLeft extends LinearOpMode {
             //forward
             zoom.drivetrain.forward(2);
             //turn right
-            zoom.drivetrain.pointTurnLeft();
+            zoom.drivetrain.pointTurn(Constants.Status.LEFT, 27.5);
             sleep(500);
             //forward
-            zoom.drivetrain.forward(22.35);
+            zoom.drivetrain.forward(23.35);
             //stop
             zoom.drivetrain.stop();
             break;
