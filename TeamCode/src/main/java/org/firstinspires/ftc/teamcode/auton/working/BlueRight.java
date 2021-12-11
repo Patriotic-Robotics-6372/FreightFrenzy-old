@@ -26,13 +26,13 @@ public class BlueRight extends LinearOpMode {
         //Line Up With Second Panel from Right, Left Seam
         while (opModeIsActive()) {
             //forward
-            zoom.drivetrain.forward(5);
+            zoom.drivetrain.forward(4.5);
             sleep(500);
             //turn left 135 degrees
-            zoom.drivetrain.pointTurnLeft();
+            zoom.drivetrain.pointTurn(Constants.Status.LEFT, 13.0);
             sleep(500);
             //backward
-            zoom.drivetrain.backward(28);
+            zoom.drivetrain.backward(29.5);
             sleep(500);
             //turn on carousel
             zoom.carousel.rightSpin(.5);
@@ -41,10 +41,10 @@ public class BlueRight extends LinearOpMode {
             //forward
             zoom.drivetrain.forward(2);
             //turn right
-            zoom.drivetrain.pointTurn(Constants.Status.RIGHT, 13.5);
+            zoom.drivetrain.pointTurn(Constants.Status.RIGHT, 14.8);
             sleep(500);
             //forward
-            zoom.drivetrain.forward(22.35);
+            zoom.drivetrain.forward(18);
             //stop
             zoom.drivetrain.stop();
             break;

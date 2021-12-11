@@ -162,7 +162,7 @@ public class DrivetrainJ implements Constants {
 
     /**
      * Sets all motors to 0
-     * @param v
+     * @param
      */
     public void stop() {
         setBase(STOP, STOP, STOP, STOP);
@@ -217,13 +217,15 @@ public class DrivetrainJ implements Constants {
     }
 
     // 19 at field. 18.5 at home
+    // 96 mm: 12.7
+    // 120 mm: 26.6
     public void pointTurnRight() {
-        pointTurn(Status.RIGHT,  26.60);
+        pointTurn(Status.RIGHT,  12.7);
     }
 
     // 19 at field. 18.5 at home
     public void pointTurnLeft() {
-        pointTurn(Status.LEFT,  26.60);
+        pointTurn(Status.LEFT,  12.7);
     }
 
     /**

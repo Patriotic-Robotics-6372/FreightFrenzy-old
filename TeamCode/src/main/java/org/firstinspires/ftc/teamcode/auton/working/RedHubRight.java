@@ -1,15 +1,13 @@
 package org.firstinspires.ftc.teamcode.auton.working;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
-import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.teamcode.hardware.Constants;
 import org.firstinspires.ftc.teamcode.hardware.Robot2;
 
-@Autonomous (name = "RedHubLeft", group = "PRTEST")
-public class RedHubLeft extends LinearOpMode {
+@Autonomous (name = "RedHubRight", group = "PRTEST")
+public class RedHubRight extends LinearOpMode {
 
    Robot2 zoom = new Robot2();
     @Override
@@ -34,13 +32,13 @@ public class RedHubLeft extends LinearOpMode {
             zoom.drivetrain.forward(12);
             sleep(250);
             //turn
-            zoom.drivetrain.pointTurnLeft();
+            zoom.drivetrain.pointTurnRight();
             sleep(250);
             //backward
-            zoom.drivetrain.backward(21);
+            zoom.drivetrain.backward(16);
             sleep(250);
             //turn
-            zoom.drivetrain.pointTurnRight();
+            zoom.drivetrain.pointTurnLeft();
             sleep(250);
             // forward
             zoom.drivetrain.forward(7.0);
@@ -59,28 +57,16 @@ public class RedHubLeft extends LinearOpMode {
             zoom.lift.updateLevel();
             sleep(250);
 
-            zoom.drivetrain.backward(16);
+            zoom.drivetrain.backward(4);
             sleep(250);
 
-            zoom.drivetrain.pointTurnRight();
-            sleep(250);
-
-            zoom.drivetrain.backward(53);
-            sleep(250);
-
-            zoom.carousel.leftSpin(.5);
-            sleep(3500);
-            zoom.carousel.stopSpin();
-
-            //forward
-            zoom.drivetrain.forward(2);
-            //turn right
             zoom.drivetrain.pointTurnLeft();
-            sleep(500);
-            //forward
-            zoom.drivetrain.forward(18);
-            //stop
-            zoom.drivetrain.stop();
+            sleep(250);
+
+            zoom.drivetrain.setPower(.9);
+            zoom.drivetrain.backward(70);
+            sleep(250);
+
             //lift down
             //backward
             //turn

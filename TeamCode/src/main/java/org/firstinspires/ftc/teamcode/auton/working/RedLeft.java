@@ -31,7 +31,7 @@ public class RedLeft extends LinearOpMode {
             zoom.drivetrain.forward(4.5);
             sleep(500);
             //turn left 135 degrees
-            zoom.drivetrain.pointTurn(Constants.Status.RIGHT, 24.45);
+            zoom.drivetrain.pointTurn(Constants.Status.RIGHT, 13.0);
             sleep(500);
             //backward
             zoom.drivetrain.backward(29.5);
@@ -43,10 +43,10 @@ public class RedLeft extends LinearOpMode {
             //forward
             zoom.drivetrain.forward(2);
             //turn right
-            zoom.drivetrain.pointTurn(Constants.Status.LEFT, 27.5);
+            zoom.drivetrain.pointTurn(Constants.Status.LEFT, 14.8);
             sleep(500);
             //forward
-            zoom.drivetrain.forward(23.35);
+            zoom.drivetrain.forward(18);
             //stop
             zoom.drivetrain.stop();
             break;

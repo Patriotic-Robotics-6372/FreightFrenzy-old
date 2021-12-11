@@ -18,6 +18,8 @@ public class slimeTeleOp2 extends LinearOpMode {
 
     boolean lbState, lbCurr, lbPrev, rbState, rbCurr, rbPrev;
     boolean rTCurr, rTPrev, rTState, rTToggle;
+    int liftEnc;
+
     @Override
     public void runOpMode() throws InterruptedException {
 
@@ -41,7 +43,8 @@ public class slimeTeleOp2 extends LinearOpMode {
         zoom.init(hardwareMap, telemetry);
 //        zoom.lift.init();
 //        zoom.lift.setTelemetry(telemetry);
-//        zoom.lift.useEncoders(true);
+        zoom.lift.useEncoders(true);
+        zoom.lift.useBrake(true);
 //        zoom.lift.useBrake(true);
 //        zoom.lift.setMaxPower(.3);
         waitForStart();
@@ -120,7 +123,7 @@ public class slimeTeleOp2 extends LinearOpMode {
                 //zoom.outtake.backPosition();
             } else if (gamepad2.right_trigger > 0.1) {
                 zoom.intake.spinBackward(1);
-                //zoom.outtake.neutralPosition();
+                zoom.outtake.forwardPosition();
             } else {
                 zoom.intake.stopIT();
             }
@@ -165,9 +168,10 @@ public class slimeTeleOp2 extends LinearOpMode {
             }
              */
 
-            if (gamepad2.dpad_up) {
+            liftEnc = zoom.lift.getLift().getCurrentPosition();
+            if (gamepad2.dpad_up && liftEnc < 1300) {
                 zoom.lift.up(.5);
-            } else if (gamepad2.dpad_down) {
+            } else if (gamepad2.dpad_down && liftEnc > 0) {
                 zoom.lift.down(.5);
             } else {
                 zoom.lift.stopLift();
@@ -176,8 +180,8 @@ public class slimeTeleOp2 extends LinearOpMode {
             //zoom.lift.updateLevel();
 
             //telemetry.addData("lift level", zoom.lift.getCurrentLevel());
-            //telemetry.addData("lift pow", zoom.lift.getLift().getPower());
-            //telemetry.addData("lift enc", zoom.lift.getLift().getCurrentPosition());
+            telemetry.addData("lift pow", zoom.lift.getLift().getPower());
+            telemetry.addData("lift enc", zoom.lift.getLift().getCurrentPosition());
 
             telemetry.addData("gamepad1 left stick y", gamepad1.left_stick_y);
             telemetry.addData("gamepad1 right stick y", gamepad1.right_stick_y);

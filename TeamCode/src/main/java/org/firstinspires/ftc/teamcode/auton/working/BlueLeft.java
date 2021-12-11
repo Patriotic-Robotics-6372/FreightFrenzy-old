@@ -29,13 +29,13 @@ Robot2 robot = new Robot2();
             robot.drivetrain.forward(16);;
             sleep(500);
             // turn left 90 degrees
-            robot.drivetrain.pointTurn(Constants.Status.RIGHT, 14.1);
+            robot.drivetrain.pointTurnRight();
             //backwards
             robot.drivetrain.forward(8);
             sleep(600);
             // forward
-            robot.drivetrain.setPower(.9);
-            robot.drivetrain.backward(60);
+            robot.drivetrain.setPower(.6);
+            robot.drivetrain.backward(90);
             // stop
             robot.drivetrain.stop();
 

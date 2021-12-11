@@ -12,7 +12,9 @@ public interface Constants {
     double bowlTwo = 20;
     double bowlThree = 30;
 
-    double TICKS_PER_IN = (537.6/((120 / 25.4)*Math.PI)) * (5.0/6.0);
+    // 96 mm wheels = 537.6/((120 / 25.4)*Math.PI)
+    // 120 mm wheels = (537.6/((120 / 25.4)*Math.PI)) * (5.0/6.0)
+    double TICKS_PER_IN = 537.6/((96 / 25.4)*Math.PI);
 
     int LIFT_THRESHOLD = -500;
 
@@ -25,7 +27,7 @@ public interface Constants {
     int LEVEL_ZERO = 0;
 
     int LEVEL_ONE = 250;
-    int LEVEL_TWO = 1000;
+    int LEVEL_TWO = 1300;
     int LEVEL_THREE = 0;
 
     int LEVEL_FOUR = 0;

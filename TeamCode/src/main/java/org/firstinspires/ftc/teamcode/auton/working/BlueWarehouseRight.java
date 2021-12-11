@@ -28,9 +28,10 @@ public class BlueWarehouseRight extends LinearOpMode {
             //forward
             zoom.drivetrain.forward(16);
             sleep(1000);
-            zoom.drivetrain.pointTurn(Constants.Status.LEFT, 24);
+            zoom.drivetrain.pointTurnLeft();
             sleep(500);
-            zoom.drivetrain.forward(70);
+            zoom.drivetrain.setPower(.5);
+            zoom.drivetrain.forward(90);
             break;
             //LETS FUCKING GO
         }
